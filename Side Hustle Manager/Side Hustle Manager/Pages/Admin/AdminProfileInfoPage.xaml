@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.Admin.AdminProfileInfoPage"
+             Title="Employer Profile">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Profilna slika -->
+            <Image x:Name="ProfileImage"
+                   HeightRequest="150"
+                   WidthRequest="150"
+                   Aspect="AspectFill"
+                   HorizontalOptions="Center"
+                   BackgroundColor="#DDD"
+                   Source="{Binding ProfileImagePath}" />
+
+            <!-- Naziv firme -->
+            <Label Text="{Binding CompanyName}"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <!-- Ime admina -->
+            <Label Text="{Binding Name}"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   TextColor="Gray"/>
+
+            <!-- Adresa -->
+            <Label Text="{Binding Address}"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="Gray"/>
+
+            <!-- Kontakt -->
+            <Label Text="{Binding ContactInfo}"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="Gray"/>
+
+            <!-- ⭐ Average rating -->
+            <Label x:Name="AverageRatingLabel"
+                   Text="Average rating: 0/5"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

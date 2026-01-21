@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:Side_Hustle_Manager.Pages.User"
+       x:Class="Side_Hustle_Manager.Shells.UserShell"
+       Title="UserShell">
+
+    <TabBar>
+
+        <Tab Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate pages:UserHomePage}"/>
+        </Tab>
+
+        <Tab Title="MySideHustles">
+            <ShellContent ContentTemplate="{DataTemplate pages:UserSideHustlePage}"/>
+        </Tab>
+
+        <Tab Title="Profile">
+            <ShellContent ContentTemplate="{DataTemplate pages:UserProfilePage}"/>
+        </Tab>
+
+    </TabBar>
+</Shell>

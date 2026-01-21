@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.LoginPage"
+             Title="LoginPage">
+
+    <VerticalStackLayout Padding="30" Spacing="15">
+
+        <Label Text="Side Hustle Manager"
+            FontSize="26"
+            HorizontalOptions="Center" />
+
+        <Entry Placeholder="Korisničko ime "
+            Text="{Binding Username}" />
+
+        <Entry Placeholder="Lozinka"
+            IsPassword="True"
+            Text="{Binding Password}" />
+
+
+        <Button Text="Login"
+             Clicked="OnLoginClicked" />
+
+        <Label Text="Don't have an account?"
+    HorizontalOptions="Center"
+    TextColor="#6B7F74" />
+
+        <Button Text="Register"
+     BackgroundColor="Transparent"
+     TextColor="#2ECC71"
+     Clicked="OnRegisterClicked" />
+
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.User.UserHomePage"
+             Title="UserHomePage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+
+            <Picker x:Name="CategoryPicker"
+                 Title="Kategorija"
+                 SelectedIndexChanged="FilterChanged"/>
+
+            <Picker x:Name="EmployerPicker"
+                 Title="Poslodavac"
+                 SelectedIndexChanged="FilterChanged"/>
+
+            <CollectionView ItemsSource="{Binding SideHustles}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="#FFFFFF"
+                             StrokeShape="RoundRectangle 12"
+                             Padding="10"
+                             Margin="6">
+
+                            <VerticalStackLayout Spacing="8">
+
+                                <Image Source="{Binding ImagePath}"
+                                    HeightRequest="140"
+                                    Aspect="AspectFill"/>
+
+                                <Label Text="{Binding Title}"
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    TextColor="#1E2D24"/>
+
+                                <Label Text="{Binding Description}"
+                                    FontSize="14"
+                                    TextColor="#6B7F74"/>
+
+                                <Label Text="{Binding PayDisplay}"
+                                    FontAttributes="Bold"
+                                    TextColor="#27AE60"/>
+
+                                <Label Text="{Binding EmployerName}"
+                                    FontSize="12"
+                                    TextColor="#6B7F74"/>
+
+                                <Button Text="Prijavi se"
+                                     BackgroundColor="#2ECC71"
+                                     TextColor="White"
+                                     CornerRadius="8"
+                                     Clicked="Apply_Clicked"
+                                     CommandParameter="{Binding .}"/>
+                            </VerticalStackLayout>
+
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

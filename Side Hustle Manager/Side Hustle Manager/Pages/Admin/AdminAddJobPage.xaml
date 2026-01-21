@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.Admin.AdminAddJobPage"
+             Title="AdminAddJobPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                          Spacing="14"
+                          BackgroundColor="#F9FBFA">
+
+            <Label Text="Dodaj posao"
+                FontSize="22"
+                FontAttributes="Bold"
+                TextColor="#1E2D24"/>
+
+            <Entry x:Name="TitleEntry"
+                Placeholder="Naziv posla"/>
+
+            <Editor x:Name="DescriptionEntry"
+                 Placeholder="Opis posla"
+                 HeightRequest="100"/>
+
+            <Entry x:Name="PayEntry"
+                Placeholder="Dnevnica (KM)"
+                Keyboard="Numeric"/>
+
+            <Picker x:Name="CategoryPicker"
+                 Title="Kategorija"/>
+
+            <!-- PREVIEW SLIKE -->
+            <Image x:Name="JobImage"
+                HeightRequest="160"
+                Aspect="AspectFill"
+                IsVisible="False"
+                BackgroundColor="#A3E4D7"/>
+
+            <Button Text="Dodaj sliku"
+                 BackgroundColor="#27AE60"
+                 TextColor="White"
+                 Clicked="PickImage_Clicked"/>
+
+            <Button Text="Ukloni sliku"
+     BackgroundColor="#E74C3C"
+     TextColor="White"
+     IsVisible="{Binding Source={x:Reference JobImage}, Path=IsVisible}"
+     Clicked="RemoveImage_Clicked"/>
+
+
+
+            <Button Text="Sačuvaj"
+                 BackgroundColor="#2ECC71"
+                 TextColor="White"
+                 Clicked="Save_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

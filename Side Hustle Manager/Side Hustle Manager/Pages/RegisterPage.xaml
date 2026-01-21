@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.RegisterPage"
+             Title="RegisterPage">
+
+    <VerticalStackLayout Padding="30" Spacing="15">
+        <Label Text="Register"
+           FontSize="26"
+           HorizontalOptions="Center" />
+
+        <Entry Placeholder="Korisničko ime " Text="{Binding Username}" />
+        <Entry Placeholder="Lozinka" IsPassword="True" Text="{Binding Password}" />
+        <Button Text="Registracija" Clicked="OnRegisterClicked" />
+
+        <Label Text="Choose role" />
+
+        <RadioButton x:Name="UserRadio"
+             Content="User"
+             GroupName="role"
+             IsChecked="True" />
+
+        <RadioButton x:Name="AdminRadio"
+             Content="Admin"
+             GroupName="role" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

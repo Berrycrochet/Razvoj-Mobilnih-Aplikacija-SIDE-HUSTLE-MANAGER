@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Side_Hustle_Manager.Pages.Admin"
+             x:Class="Side_Hustle_Manager.Shells.AdminShell"
+             Title="AdminShell">
+
+    <TabBar>
+
+        <Tab Title="Dashboard">
+            <ShellContent ContentTemplate="{DataTemplate pages:AdminDashboardPage}"/>
+        </Tab>
+
+        <Tab Title="AddJob">
+            <ShellContent ContentTemplate="{DataTemplate pages:AdminAddJobPage}"/>
+        </Tab>
+
+        <Tab Title="AdminProfilePage">
+            <ShellContent ContentTemplate="{DataTemplate pages:AdminProfilePage}"/>
+
+        </Tab>
+
+
+    </TabBar>
+</Shell>

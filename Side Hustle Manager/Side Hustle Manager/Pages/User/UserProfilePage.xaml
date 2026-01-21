@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.User.UserProfilePage"
+             Title="UserProfilePage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- PROFILNA SLIKA -->
+            <Image x:Name="ProfileImage"
+               HeightRequest="150"
+               WidthRequest="150"
+               Aspect="AspectFill"
+               HorizontalOptions="Center"
+               BackgroundColor="#DDD"
+               Source="avatar_placeholder.png"/>
+            <Button Text="Change Profile Image"
+                    Clicked="OnChangeImageClicked"/>
+
+            <!-- SKILLS -->
+            <Label Text="Skills" FontAttributes="Bold"/>
+            <Entry x:Name="SkillEntry" Placeholder="Add new skill"/>
+            <Button Text="Add Skill" Clicked="OnAddSkillClicked"/>
+            <CollectionView x:Name="SkillsCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="{Binding SkillName}" VerticalOptions="Center"/>
+                            <Button Text="Delete" Clicked="OnDeleteSkillClicked"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- EXPERIENCE -->
+            <Label Text="Experience" FontAttributes="Bold"/>
+            <Entry x:Name="ExperienceTitleEntry" Placeholder="Title"/>
+            <Entry x:Name="ExperienceCompanyEntry" Placeholder="Company"/>
+            <Entry x:Name="ExperiencePeriodEntry" Placeholder="Period"/>
+            <Button Text="Add Experience" Clicked="OnAddExperienceClicked"/>
+            <CollectionView x:Name="ExperienceCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="{Binding Title}" VerticalOptions="Center"/>
+                            <Label Text="{Binding Company}" VerticalOptions="Center"/>
+                            <Label Text="{Binding Period}" VerticalOptions="Center"/>
+                            <Button Text="Delete" Clicked="OnDeleteExperienceClicked"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            <!-- LOCATION -->
+            <Label x:Name="LocationLabel" Text="Your location will appear here" HorizontalOptions="Center" />
+            <Button Text="Get My Location" Clicked="OnGetLocationClicked" />
+
+            <!-- Logout dugme -->
+            <Button Text="Logout" BackgroundColor="#E74C3C" TextColor="White" Clicked="OnLogoutClicked"/>
+
+
+            <!-- Ratings Section -->
+            <Label Text="Ratings" FontAttributes="Bold" FontSize="18"/>
+            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                <Label Text="Stars:" VerticalOptions="Center"/>
+                <Picker x:Name="StarPicker" Title="Select rating">
+                    <Picker.Items>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <Entry x:Name="CommentEntry" Placeholder="Add a comment (optional)" />
+            <Button Text="Submit Rating" Clicked="OnSubmitRatingClicked"/>
+
+            <Label x:Name="AverageRatingLabel" Text="Average: 0/5" FontAttributes="Bold" />
+            <CollectionView x:Name="RatingsCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="5" Padding="5" CornerRadius="5" BackgroundColor="#F0F0F0">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding RatedByUsername}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Stars, StringFormat='Stars: {0}'}"/>
+                                <Label Text="{Binding Comment}"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
