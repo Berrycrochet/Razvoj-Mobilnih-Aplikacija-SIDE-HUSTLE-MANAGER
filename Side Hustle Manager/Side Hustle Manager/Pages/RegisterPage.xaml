@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.RegisterPage"
+             Title="Registracija">
+
+    <VerticalStackLayout Padding="30" Spacing="15">
+
+        <Label Text="Registracija"
+               TextColor="#2ECC71"
+               FontSize="30"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Entry Placeholder="Vaša email adresa"
+               Keyboard="Email"
+               Text="{Binding Username}"
+               />
+
+        <Entry Placeholder="Vaša Lozinka"
+               IsPassword="True"
+               Text="{Binding Password}" />
+
+        <Label Text="Izaberite ulogu"/>
+
+        <RadioButton x:Name="UserRadio"
+                     Content="User"
+                     GroupName="role"
+                     IsChecked="True"/>
+
+        <RadioButton x:Name="AdminRadio"
+                     Content="Admin"
+                     GroupName="role"/>
+
+        <Button Text="Registracija"
+                
+                BackgroundColor="#2ECC71"
+                TextColor="White"
+                Clicked="OnRegisterClicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

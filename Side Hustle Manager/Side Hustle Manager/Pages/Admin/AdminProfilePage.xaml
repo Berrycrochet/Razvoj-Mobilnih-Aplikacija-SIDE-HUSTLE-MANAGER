@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.Admin.AdminProfilePage"
+             x:Name="AdminProfilePageRoot"
+             Title="Admin Profile">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- PROFILNA SLIKA (okrugla sa borderom) -->
+            <Frame HeightRequest="160"
+                   WidthRequest="160"
+                   CornerRadius="80"
+                   Padding="3"
+                   BorderColor="#6C63FF"
+                   HorizontalOptions="Center">
+
+                <Image x:Name="ProfileImage"
+                       HeightRequest="150"
+                       WidthRequest="150"
+                       Aspect="AspectFill"
+                       Source="avatar_placeholder.png"/>
+            </Frame>
+
+            <Button x:Name="ChangeImageButton"
+                    Text="Change Profile Image"
+                    Clicked="OnChangeImageClicked"
+                    IsVisible="False"/>
+
+            <!-- PODACI -->
+            <Entry x:Name="NameEntry" Placeholder="Name" IsVisible="False"/>
+            <Entry x:Name="CompanyEntry" Placeholder="Company Name" IsVisible="False"/>
+            <Entry x:Name="AddressEntry" Placeholder="Address" IsVisible="False"/>
+            <Entry x:Name="ContactEntry" Placeholder="Contact Info" IsVisible="False"/>
+
+            <!-- READ ONLY PRIKAZ -->
+            <Label x:Name="NameLabel" FontSize="18" FontAttributes="Bold"/>
+            <Label x:Name="CompanyLabel"/>
+            <Label x:Name="AddressLabel"/>
+            <Label x:Name="ContactLabel"/>
+
+            <!-- EDIT MODE DUGMAD -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Button x:Name="EditProfileButton" Text="Edit Profile" Clicked="OnEditClicked"/>
+                <Button x:Name="SaveProfileButton" Text="Save" Clicked="OnSaveClicked" IsVisible="False"/>
+                <Button x:Name="CancelEditButton" Text="Cancel" Clicked="OnCancelEditClicked" IsVisible="False"/>
+            </HorizontalStackLayout>
+
+            <!-- LOGOUT -->
+            <Button Text="Logout"
+                    BackgroundColor="#E74C3C"
+                    TextColor="White"
+                    Clicked="Logout_Clicked"/>
+
+
+            <!-- Ratings Section 
+            <Label Text="Ratings" FontAttributes="Bold" FontSize="18"/>
+            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                <Label Text="Stars:" VerticalOptions="Center"/>
+                <Picker x:Name="StarPicker" Title="Select rating">
+                    <Picker.Items>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <Entry x:Name="CommentEntry" Placeholder="Add a comment (optional)" />
+            <Button Text="Submit Rating" Clicked="OnSubmitRatingClicked"/>
+
+            <Label x:Name="AverageRatingLabel" Text="Average: 0/5" FontAttributes="Bold" />
+            <CollectionView x:Name="RatingsCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="5" Padding="5" CornerRadius="5" BackgroundColor="#F0F0F0">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding RatedByUsername}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Stars, StringFormat='Stars: {0}'}"/>
+                                <Label Text="{Binding Comment}"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+          -->
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+

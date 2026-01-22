@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.Admin.AdminProfileInfoPage"
+             Title="Employer Profile">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Frame HeightRequest="160"
+       WidthRequest="160"
+       CornerRadius="80"
+       Padding="3"
+       BorderColor="#6C63FF"
+       HorizontalOptions="Center">
+
+                <Image x:Name="ProfileImage"
+           HeightRequest="150"
+           WidthRequest="150"
+           Aspect="AspectFill"
+           Source="avatar_placeholder.png"/>
+            </Frame>
+
+            <Button x:Name="ChangeImageButton"
+        Text="Change Profile Image"
+        Clicked="OnChangeImageClicked"
+        IsVisible="False"/>
+
+            <!-- PODACI -->
+            <Entry x:Name="NameEntry" Placeholder="Name" IsVisible="False"/>
+            <Entry x:Name="CompanyEntry" Placeholder="Company Name" IsVisible="False"/>
+            <Entry x:Name="AddressEntry" Placeholder="Address" IsVisible="False"/>
+            <Entry x:Name="ContactEntry" Placeholder="Contact Info" IsVisible="False"/>
+
+            <!-- ⭐ Average rating -->
+            <Label x:Name="AverageRatingLabel"
+               Text="Average rating: 0/5"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
