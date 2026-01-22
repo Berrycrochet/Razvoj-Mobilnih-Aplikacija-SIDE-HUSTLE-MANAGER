@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.Admin.AdminProfilePage"
+             x:Name="AdminProfilePageRoot"
+             BackgroundColor="#F5F6FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20">
+
+            <!-- NASLOV -->
+            <Label Text="Profil poslodavca"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#2ECC71"/>
+
+            <!-- PROFIL KARTICA -->
+            <Frame CornerRadius="20"
+                   Padding="20"
+                   BackgroundColor="White"
+                   HasShadow="True">
+
+                <VerticalStackLayout Spacing="16" HorizontalOptions="Center">
+
+                    <!-- PROFILNA SLIKA -->
+                    <Frame HeightRequest="150"
+                           WidthRequest="150"
+                           CornerRadius="75"
+                           Padding="3"
+                           BorderColor="#2ECC71"
+                           HasShadow="False">
+
+                        <Image x:Name="ProfileImage"
+                               Aspect="AspectFill"
+                               Source="avatar_placeholder.png"/>
+                    </Frame>
+
+                    <Button x:Name="ChangeImageButton"
+                            Text="Promijeni sliku"
+                            BackgroundColor="#2ECC71"
+                            TextColor="White"
+                            CornerRadius="12"
+                            Clicked="OnChangeImageClicked"
+                            IsVisible="False"/>
+
+                    <!-- READ ONLY PODACI -->
+                    <Label x:Name="NameLabel"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+
+                    <Label x:Name="CompanyLabel"
+                           TextColor="Gray"
+                           HorizontalOptions="Center"/>
+
+                    <Label x:Name="AddressLabel"
+                           FontSize="13"
+                           TextColor="Gray"
+                           HorizontalOptions="Center"/>
+
+                    <Label x:Name="ContactLabel"
+                           FontSize="13"
+                           TextColor="Gray"
+                           HorizontalOptions="Center"/>
+
+                    <!-- EDIT POLJA -->
+                    <Entry x:Name="NameEntry"
+                           Placeholder="Naziv"
+                           IsVisible="False"/>
+
+                    <Entry x:Name="CompanyEntry"
+                           Placeholder="Naziv kompanije"
+                           IsVisible="False"/>
+
+                    <Entry x:Name="AddressEntry"
+                           Placeholder="Adresa"
+                           IsVisible="False"/>
+
+                    <Entry x:Name="ContactEntry"
+                           Placeholder="Kontakt info"
+                           IsVisible="False"/>
+
+                    <!-- DUGMAD -->
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+
+                        <Button x:Name="EditProfileButton"
+                                Text="Edit"
+                                BackgroundColor="#2ECC71"
+                                TextColor="White"
+                                CornerRadius="12"
+                                Clicked="OnEditClicked"/>
+
+                        <Button x:Name="SaveProfileButton"
+                                Text="Save"
+                                BackgroundColor="#3498DB"
+                                TextColor="White"
+                                CornerRadius="12"
+                                Clicked="OnSaveClicked"
+                                IsVisible="False"/>
+
+                        <Button x:Name="CancelEditButton"
+                                Text="Cancel"
+                                BackgroundColor="#95A5A6"
+                                TextColor="White"
+                                CornerRadius="12"
+                                Clicked="OnCancelEditClicked"
+                                IsVisible="False"/>
+
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- LOGOUT -->
+            <Button Text="Odjavi se"
+                    BackgroundColor="#E74C3C"
+                    TextColor="White"
+                    CornerRadius="14"
+                    Clicked="Logout_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.Admin.AdminRatingsPage"
+             Title="AdminRatingsPage">
+    <VerticalStackLayout Padding="20" Spacing="10">
+
+        <Picker x:Name="StarPicker" Title="Select rating">
+            <Picker.Items>
+                <x:String>1</x:String>
+                <x:String>2</x:String>
+                <x:String>3</x:String>
+                <x:String>4</x:String>
+                <x:String>5</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Entry x:Name="CommentEntry" Placeholder="Comment (optional)" />
+
+        <Button Text="Submit Rating"
+             Clicked="OnSubmitRatingClicked"/>
+
+        <Label x:Name="AverageRatingLabel"
+            FontAttributes="Bold"/>
+
+        <CollectionView x:Name="RatingsCollection">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding RatedByUsername}"
+                                FontAttributes="Bold"/>
+                            <Label Text="{Binding Stars, StringFormat='Stars: {0}'}"/>
+                            <Label Text="{Binding Comment}"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>

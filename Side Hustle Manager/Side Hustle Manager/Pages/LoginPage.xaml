@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.LoginPage"
+             
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25" HorizontalOptions="Center">
+
+            <!-- LOGO -->
+            <Image Source="logo.png"
+                   HeightRequest="150"
+                   WidthRequest="300"
+                   HorizontalOptions="Center"
+                   Aspect="AspectFit"/>
+
+            <!-- USERNAME -->
+            <Frame CornerRadius="8"
+                   BackgroundColor="#F0F0F0"
+                   Padding="10"
+                   HasShadow="False"
+                   WidthRequest="300">
+                <Entry x:Name="UsernameEntry"
+                       Placeholder="Vaš korisnički email"
+                       Text="{Binding Username}"
+                       Keyboard="Email"
+                       BackgroundColor="Transparent"/>
+            </Frame>
+
+            <!-- PASSWORD + EYE -->
+            <Grid WidthRequest="300" HeightRequest="45">
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="Lozinka"
+                       IsPassword="True"
+                       Text="{Binding Password}"
+                       BackgroundColor="#F0F0F0"
+                       VerticalOptions="Center"
+                       Margin="0"
+                       />
+                
+                <ImageButton Source="eye.png"
+                             BackgroundColor="Transparent"
+                             Clicked="OnTogglePassword"
+                             WidthRequest="24"
+                             HeightRequest="24"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center"
+                             Margin="0,0,10,0"
+                             Aspect="AspectFit"/>
+            </Grid>
+
+            <!-- LOGIN BUTTON -->
+            <Button Text="Prijava"
+                    BackgroundColor="#2ECC71"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="45"
+                    WidthRequest="300"
+                    Clicked="OnLoginClicked"/>
+
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label Text="Nemate račun?"
+           TextColor="#6B7F74"
+           HorizontalOptions="Center"/>
+
+                <Button Text="Registracija"
+            BackgroundColor="Transparent"
+            TextColor="#2ECC71"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            Clicked="OnRegisterClicked"/>
+            </VerticalStackLayout>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Side_Hustle_Manager.Pages.RegisterPage"
+             >
+
+    <VerticalStackLayout Padding="30" Spacing="30">
+
+        <!-- LOGIN STYLE CARD -->
+       
+
+            <VerticalStackLayout Spacing="20">
+                <Label Text="Registracija"
+                           TextColor="#2ECC71"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+
+                <Entry Placeholder="Vaša email adresa"
+                           Keyboard="Email"
+                           Text="{Binding Username}"
+                           BackgroundColor="#F8F8F8"
+                           HeightRequest="50"
+                          
+                           />
+
+                <Entry Placeholder="Vaša Lozinka"
+                           IsPassword="True"
+                           Text="{Binding Password}"
+                           BackgroundColor="#F8F8F8"
+                           HeightRequest="50"
+                           />
+
+
+            </VerticalStackLayout>
+
+       
+
+        <!-- ROLE SELECTION BOX -->
+        <Frame BackgroundColor="White"
+                   CornerRadius="15"
+                   Padding="15"
+                   HasShadow="True">
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Izaberite ulogu"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+
+                <RadioButton x:Name="UserRadio"
+                                 Content="User"
+                                 GroupName="role"
+                                 IsChecked="True"/>
+
+                <RadioButton x:Name="AdminRadio"
+                                 Content="Admin"
+                                 GroupName="role"/>
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <!-- REGISTER BUTTON -->
+        <Button Text="Registracija"
+                    BackgroundColor="#2ECC71"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    Clicked="OnRegisterClicked"/>
+
+        <!-- LOGIN LINK -->
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0,10,0,0">
+            <Label Text="Već imaš račun?" TextColor="#777"/>
+            <Label Text="Prijavi se"
+                       TextColor="#2ECC71"
+                       FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnGoToLoginTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
